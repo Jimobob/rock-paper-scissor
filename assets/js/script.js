@@ -10,46 +10,57 @@ function oneRound(playerSelection, computerSelection){
 	switch(playerSelection){
 		case 'rock':
 			if(computerSelection == 'rock'){
-				return('A tie!');
+				return('You both chose rock! That\'s a tie!');
 			}
 			else if(computerSelection == 'scissor'){
 				playerScore++;
-				return('Rock beats scissor! You win!');
+				return('Your rock beats their scissor! You win!');
 			}
 			else{
 				opponentScore++;
-				return('Paper beats rock! You lose!');
+				return('Their paper beats your rock! You lose!');
 			}
 			break;
 
 		case 'paper':
 			if(computerSelection == 'rock'){
 				playerScore++;
-				return('Paper beats rock! You win!');
+				return('Your paper beats their rock! You win!');
 			}
 			else if(computerSelection == 'paper'){
-				return('A tie!');
+				return('You both chose paper! That\'s a tie!');
 			}
 			else{
 				opponentScore++;
-				return('Scissor beats paper! You lose!');
+				return('Their scissor beats your paper! You lose!');
 			}
 			break;
 
 		case 'scissor':
 			if(computerSelection == 'rock'){
 				opponentScore++;
-				return('Rock beats scissor! You lose!');
+				return('Their rock beats your scissor! You lose!');
 			}
 			else if(computerSelection == 'paper'){
 				playerScore++;
-				return('Scissor beats paper! You win!');
+				return('Your scissor beats their rock! You win!');
 			}
 			else{
-				return('A tie!');
+				return('You both chose scissor! That\'s a tie!');
 			}
 			break;
 	}		
+}
+
+function start(){
+	document.getElementById('modal').style.display = 'none';
+
+	playerScore = 0;
+	opponentScore = 0;
+
+	document.querySelector('#result').innerHTML = ' ';
+	document.querySelector('#playerScore').innerHTML = playerScore;
+	document.querySelector('#computerScore').innerHTML = opponentScore;
 }
 
 function game(){
@@ -59,6 +70,19 @@ function game(){
 	document.querySelector("#playerScore").innerHTML = playerScore;
 	document.querySelector("#computerScore").innerHTML = opponentScore;
 	document.querySelector("#result").innerHTML = result;
+
+	if(playerScore == 5 || opponentScore == 5){
+		document.getElementById('modal').style.display = 'block';
+
+		if(playerScore == 5){
+			document.querySelector('#modal_message').innerHTML = 'Congratulation, you got 5 points so you win!';
+		}
+		else{
+			document.querySelector('#modal_message').innerHTML = 'Sorry, the computer got 5 points so you lose!';
+		}
+
+		document.querySelector('#start').innerHTML = 'Play Again?';
+	}
 }
 
 

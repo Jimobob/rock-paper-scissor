@@ -3,6 +3,42 @@
 	padding: 0;
 }
 
+#modal{
+	background: rgba(0,0,0,0.75);
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	overflow: auto;
+	position: fixed;
+	z-index: 1;
+}
+
+.modal-content{
+	animation: slideIn 0.3s ease-out;
+	background: #fff;
+	border-radius: 5px;
+	max-width: 500px;
+	width: 70%;
+	margin: 10% auto 0;
+}
+
+.items{
+	text-align: center;
+	padding: 20px;
+}
+
+@keyframes slideIn{
+	from{
+		margin-top: 0;
+	}
+	to{
+		margin-top: 10%;
+	}
+}
+
 td{
 	text-align: center;
 }
