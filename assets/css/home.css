@@ -3,6 +3,20 @@
 	padding: 0;
 }
 
+h1{
+	text-align: center;
+	padding: 20px;
+	margin-top: 50px;
+}
+
+h2{
+	text-align: center;
+}
+
+#modal_message{
+	padding: 15px;
+}
+
 #modal{
 	background: rgba(0,0,0,0.75);
 	bottom: 0;
@@ -17,12 +31,12 @@
 }
 
 .modal-content{
-	animation: slideIn 0.3s ease-out;
+	animation: slideIn 0.5s ease-out;
 	background: #fff;
 	border-radius: 5px;
-	max-width: 500px;
+	max-width: 400px;
 	width: 70%;
-	margin: 10% auto 0;
+	margin: 25% auto 0;
 }
 
 .items{
@@ -30,12 +44,52 @@
 	padding: 20px;
 }
 
+.container{
+	text-align: center;
+	padding: 20px;
+}
+
+#scoreboard{
+	text-align: center;
+}
+
+button{
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid green;
+	border-radius: 10px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+button:hover{
+	background-color: green;
+	color: white;
+}
+
+table{
+	margin: auto;
+}
+
+th, td{
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#result{
+	text-align: center;
+	padding: 10px;
+}
+
 @keyframes slideIn{
 	from{
 		margin-top: 0;
 	}
 	to{
-		margin-top: 10%;
+		margin-top: 25%;
 	}
 }
 
